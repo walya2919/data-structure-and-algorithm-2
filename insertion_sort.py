@@ -18,17 +18,23 @@ def insertion_sort(arr:list)->list:
     [1, 2, 3, 4, 5, 6]
     '''
     sorted_arr = arr[:]
+    # i is target idx, j is dest idx
+    # move arr[i] to arr[j]
+    # and shift right every element arr[j:i]
     for i in range(1, len(sorted_arr)):
         for j in range(i-1, -1, -1):
-            # i is target index and, j is 
             if sorted_arr[i] >= sorted_arr[j]:
-                # move sorted_arr[j+1:i] to [j+2:i+1]
-                # i goto j+1
-                temp = sorted_arr[i]
-                # for k in range(i, j, -1):
-                #     sorted_arr[k] = arr[k-1]
-                ### change to array indexing method
-                sorted_arr[j+2:i+1] = sorted_arr[j+1:i]
-                sorted_arr[j+1] = temp
+                j += 1
                 break
+        
+        temp = sorted_arr[i]
+        sorted_arr[j+1:i+1] = sorted_arr[j:i]
+        sorted_arr[j] = temp
+        
     return sorted_arr
+
+if __name__ == "__main__":
+    print("run example code")
+
+    arr = [4, 5, 9, 3, 1, 8, 2, 7, 0, 6]
+    print(insertion_sort(arr=arr))
