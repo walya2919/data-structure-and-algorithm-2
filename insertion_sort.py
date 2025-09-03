@@ -27,6 +27,7 @@ def insertion_sort(arr:list)->list:
                 temp = sorted_arr[i]
                 # for k in range(i, j, -1):
                 #     sorted_arr[k] = arr[k-1]
+                ### change to array indexing method
                 sorted_arr[j+2:i+1] = sorted_arr[j+1:i]
                 sorted_arr[j+1] = temp
                 break
