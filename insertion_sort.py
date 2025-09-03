@@ -22,13 +22,12 @@ def insertion_sort(arr:list)->list:
         for j in range(i-1, -1, -1):
             # i is target index and, j is 
             if sorted_arr[i] >= sorted_arr[j]:
-                # j+1 - i-1 => j+2 - i
+                # move sorted_arr[j+1:i] to [j+2:i+1]
                 # i goto j+1
                 temp = sorted_arr[i]
-                for k in range(i, j, -1):
-                    sorted_arr[k] = arr[k-1]
-                arr[j+1] = temp
+                # for k in range(i, j, -1):
+                #     sorted_arr[k] = arr[k-1]
+                sorted_arr[j+2:i+1] = sorted_arr[j+1:i]
+                sorted_arr[j+1] = temp
                 break
-
-array = [1, 3, 5, 2, 23, 526]
-print(insertion_sort(array))
+    return sorted_arr
