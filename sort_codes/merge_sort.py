@@ -58,4 +58,9 @@ def merge_sort(arr:list)->list:
     
     else:
         exit(1)
-        
+
+if __name__ == "__main__":
+    print("run example code")
+
+    arr = [4, 5, 9, 3, 1, 8, 2, 7, 0, 6]
+    print(merge_sort(arr=arr))
